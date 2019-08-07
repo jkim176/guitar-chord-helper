@@ -42,10 +42,6 @@
       </label>
     </div>
 
-    <div>
-      <!-- TODO embellishments -->
-    </div>
-
   </div>
 </template>
 
@@ -55,8 +51,7 @@ export default {
   data() {
     return {
       musicalKey: "A",
-      majorMinor: "major",
-      embellishments: []
+      majorMinor: "major"
     }
   },
   methods: {
