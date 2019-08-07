@@ -278,68 +278,66 @@ export default {
     }
   },
   mounted() {
-    this.$root.$on('change-major-minor', selectedMajorMinor => {
-        if(selectedMajorMinor == "major") {
-          for(let i = 0; i < this.firstString.length; i++) {
-            this.firstString[i].marker = this.major.firstString[i];
-            this.secondString[i].marker = this.major.secondString[i];
-            this.thirdString[i].marker = this.major.thirdString[i];
-            this.fourthString[i].marker = this.major.fourthString[i];
-            this.fifthString[i].marker = this.major.fifthString[i];
-            this.sixthString[i].marker = this.major.sixthString[i];
-          }
-        } else if(selectedMajorMinor == "minor") {
-          for(let i = 0; i < this.firstString.length; i++) {
-            this.firstString[i].marker = this.minor.firstString[i];
-            this.secondString[i].marker = this.minor.secondString[i];
-            this.thirdString[i].marker = this.minor.thirdString[i];
-            this.fourthString[i].marker = this.minor.fourthString[i];
-            this.fifthString[i].marker = this.minor.fifthString[i];
-            this.sixthString[i].marker = this.minor.sixthString[i];
-          }
+    this.$root.$on('send-chord-to-display', chordKeyObject => {
+      if(chordKeyObject.chordType == "Major") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          this.firstString[i].marker = this.major.firstString[i];
+          this.secondString[i].marker = this.major.secondString[i];
+          this.thirdString[i].marker = this.major.thirdString[i];
+          this.fourthString[i].marker = this.major.fourthString[i];
+          this.fifthString[i].marker = this.major.fifthString[i];
+          this.sixthString[i].marker = this.major.sixthString[i];
         }
-    });
-    this.$root.$on('change-musical-key', selectedMusicalKey => {
-        // TODO: check for chord embellishments
-        let startingFret;
-        switch(selectedMusicalKey) {
-            case "F":
-              startingFret = 0;
-              break;
-            case "F#":
-              startingFret = 1;
-              break;
-            case "G":
-              startingFret = 2;
-              break;
-            case "G#":
-              startingFret = 3;
-              break;
-            case "A":
-              startingFret = 4;
-              break;
-            case "A#":
-              startingFret = 5;
-              break;
-            case "B":
-              startingFret = 6;
-              break;
-            case "C":
-              startingFret = 7;
-              break;
-            case "C#":
-              startingFret = 8;
-              break;
-            case "D":
-              startingFret = 9;
-              break;
-            case "D#":
-              startingFret = 10;
-              break;
+      } else if(chordKeyObject.chordType == "Minor") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          this.firstString[i].marker = this.minor.firstString[i];
+          this.secondString[i].marker = this.minor.secondString[i];
+          this.thirdString[i].marker = this.minor.thirdString[i];
+          this.fourthString[i].marker = this.minor.fourthString[i];
+          this.fifthString[i].marker = this.minor.fifthString[i];
+          this.sixthString[i].marker = this.minor.sixthString[i];
         }
-        for(let i = 0; i < this.fretLabels.length; i++) {
-          this.fretLabels[i].label = startingFret + i;
-        }
+      }
+      // TODO: frets based on variations
+      let startingFret;
+      switch(chordKeyObject.musicalKey) {
+          case "F":
+            startingFret = 0;
+            break;
+          case "F#":
+            startingFret = 1;
+            break;
+          case "G":
+            startingFret = 2;
+            break;
+          case "G#":
+            startingFret = 3;
+            break;
+          case "A":
+            startingFret = 4;
+            break;
+          case "A#":
+            startingFret = 5;
+            break;
+          case "B":
+            startingFret = 6;
+            break;
+          case "C":
+            startingFret = 7;
+            break;
+          case "C#":
+            startingFret = 8;
+            break;
+          case "D":
+            startingFret = 9;
+            break;
+          case "D#":
+            startingFret = 10;
+            break;
+      }
+      for(let i = 0; i < this.fretLabels.length; i++) {
+        this.fretLabels[i].label = startingFret + i;
+      }
     });
   }
 }

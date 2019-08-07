@@ -2,10 +2,9 @@
   <div class="picker">
 
     <div>
-      <label for="musicalKey">Key:</label>
+      <label for="musicalKey">Key</label>
       <select id="musicalKey"
               v-model="musicalKey"
-              @change="changeMusicalKey"
               >
         <option>A</option>
         <option>A#</option>
@@ -23,25 +22,20 @@
     </div>
 
     <div>
-      <label>
-        Major
-        <input type="radio"
-               value="major"
-               v-model="majorMinor"
-               @change="changeMajorMinor"
-               />
-      </label>
-
-      <label>
-        Minor
-        <input type="radio"
-               value="minor"
-               v-model="majorMinor"
-               @change="changeMajorMinor"
-               />
-      </label>
+      <label for="chordType">Chords</label>
+      <select id="chordType"
+              v-model="chordType"
+              >
+        <option>Major</option>
+        <option>Minor</option>
+      </select>
     </div>
 
+    <button id="getChordButton"
+            @click="sendChordToDisplay"
+            >
+            Get
+    </button>
   </div>
 </template>
 
@@ -51,18 +45,19 @@ export default {
   data() {
     return {
       musicalKey: "A",
-      majorMinor: "major"
+      chordType: "Major"
     }
   },
   methods: {
-    changeMajorMinor() {
-      let selectedMajorMinor = this.majorMinor;
-      this.$root.$emit('change-major-minor', selectedMajorMinor);
-    },
-    changeMusicalKey() {
+    sendChordToDisplay() {
+      let selectedChordType = this.chordType;
       let selectedMusicalKey = this.musicalKey;
-      this.$root.$emit('change-musical-key', selectedMusicalKey);
-    }
+      let chordKeyObject = {
+        chordType: selectedChordType,
+        musicalKey: selectedMusicalKey
+      };
+      this.$root.$emit('send-chord-to-display', chordKeyObject);
+    },
   }
 }
 </script>
