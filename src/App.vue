@@ -2,7 +2,7 @@
   <div id="app">
     <Picker @send-chord-to-root="sendChordToDisplay"></Picker>
     <ChordDisplay :propMusicalKey="musicalKey"
-                  :propChordTypechordType="chordType"
+                  :propChordType="chordType"
                   >
     </ChordDisplay>
   </div>
