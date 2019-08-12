@@ -74,8 +74,6 @@ export default {
   name: "ChordDisplay",
   data() {
     return {
-      // variations: root E, root A, ...
-      variation: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
       fretLabels: [
         {
           labelId: "label0",
@@ -102,7 +100,7 @@ export default {
           label: 9
         }
       ],
-      firstString: [
+      firstString: [  // marker 0,1,2 = (blank),circle,cross
         {
           cellId: 0,
           marker: 1
@@ -258,27 +256,107 @@ export default {
           marker: 0
         },
       ],
-      major: {
-        // major: [ {variation1}, {variation2}, ... ]
-        firstString: [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString: [0, 1, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString: [0, 0, 1, 0, 0, 0],
-        sixthString: [1, 0, 0, 0, 0, 0]
-      },
-      minor: {
-        firstString: [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString: [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString: [0, 0, 1, 0, 0, 0],
-        sixthString: [1, 0, 0, 0, 0, 0]
-      }
+      major: [
+        {
+          firstString: [1, 0, 0, 0, 0, 0],
+          secondString: [1, 0, 0, 0, 0, 0],
+          thirdString: [0, 1, 0, 0, 0, 0],
+          fourthString: [0, 0, 1, 0, 0, 0],
+          fifthString: [0, 0, 1, 0, 0, 0],
+          sixthString: [1, 0, 0, 0, 0, 0]
+        },
+      ],
+      minor: [
+        {
+          firstString: [1, 0, 0, 0, 0, 0],
+          secondString: [1, 0, 0, 0, 0, 0],
+          thirdString: [1, 0, 0, 0, 0, 0],
+          fourthString: [0, 0, 1, 0, 0, 0],
+          fifthString: [0, 0, 1, 0, 0, 0],
+          sixthString: [1, 0, 0, 0, 0, 0]
+        },
+      ],
     }
   },
+  methods: {
+
+  },
+  props: {
+    propMusicalKey: {
+      type: String,
+      required: true
+    },
+    propChordType: {
+      type: String,
+      required: true
+    }
+  },
+
+  /*
+  computed: {
+    setChordDisplay() { // initializes display to type[0] ... change variation index with buttons
+      // set string labels
+      if(this.musicalKey == "F") {
+        this.startingFret = 0;
+      } else if(this.musicalKey == "F#") {
+        this.startingFret = 1;
+      } else if(this.musicalKey == "G") {
+        this.startingFret = 2;
+      } else if(this.musicalKey == "G#") {
+        this.startingFret = 3;
+      } else if(this.musicalKey == "A") {
+        this.startingFret = 4;
+      } else if(this.musicalKey == "A#") {
+        this.startingFret = 5;
+      } else if(this.musicalKey == "B") {
+        this.startingFret = 6;
+      } else if(this.musicalKey == "C") {
+        this.startingFret = 7;
+      } else if(this.musicalKey == "C#") {
+        this.startingFret = 8;
+      } else if(this.musicalKey == "D") {
+        this.startingFret = 9;
+      } else if(this.musicalKey == "D#") {
+        this.startingFret = 10;
+      } else {
+        this.startingFret = 0;
+      }
+      for(let i = 0; i < this.fretLabels.length; i++) {
+        this.fretLabels[i].label = this.startingFret + i;
+      }
+      // set markers
+      if((this.chordType == "Major" || this.chordType == "Minor") && this.musicalKey == "E") {
+
+      }
+      else if(this.chordType == "Major") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          this.firstString[i].marker = this.major[0].firstString[i];
+          this.secondString[i].marker = this.major[0].secondString[i];
+          this.thirdString[i].marker = this.major[0].thirdString[i];
+          this.fourthString[i].marker = this.major[0].fourthString[i];
+          this.fifthString[i].marker = this.major[0].fifthString[i];
+          this.sixthString[i].marker = this.major[0].sixthString[i];
+        }
+      } else if(this.chordType == "Minor") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          this.firstString[i].marker = this.minor[0].firstString[i];
+          this.secondString[i].marker = this.minor[0].secondString[i];
+          this.thirdString[i].marker = this.minor[0].thirdString[i];
+          this.fourthString[i].marker = this.minor[0].fourthString[i];
+          this.fifthString[i].marker = this.minor[0].fifthString[i];
+          this.sixthString[i].marker = this.minor[0].sixthString[i];
+        }
+      }
+    }
+  }
+  */
+
+  /*
   mounted() {
     this.$root.$on('send-chord-to-display', chordKeyObject => {
+      let chordType = chordKeyObject.chordType;
+      let musicalKey = chordKeyObject.musicalKey;
+      // cannot call method from mounted
       if(chordKeyObject.chordType == "Major") {
         for(let i = 0; i < this.firstString.length; i++) {
           this.firstString[i].marker = this.major.firstString[i];
@@ -340,6 +418,7 @@ export default {
       }
     });
   }
+  */
 }
 </script>
 

@@ -32,7 +32,7 @@
     </div>
 
     <button id="getChordButton"
-            @click="sendChordToDisplay"
+            @click="sendChordToRoot"
             >
             Get
     </button>
@@ -49,14 +49,14 @@ export default {
     }
   },
   methods: {
-    sendChordToDisplay() {
+    sendChordToRoot() {
       let selectedChordType = this.chordType;
       let selectedMusicalKey = this.musicalKey;
       let chordKeyObject = {
         chordType: selectedChordType,
         musicalKey: selectedMusicalKey
       };
-      this.$root.$emit('send-chord-to-display', chordKeyObject);
+      this.$emit('send-chord-to-root', chordKeyObject);
     },
   }
 }
