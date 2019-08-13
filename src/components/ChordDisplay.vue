@@ -256,6 +256,26 @@ export default {
           marker: 0
         },
       ],
+      eMajor: [
+        {
+          firstString: [0, 0, 0, 0, 0, 0],
+          secondString: [0, 0, 0, 0, 0, 0],
+          thirdString: [1, 0, 0, 0, 0, 0],
+          fourthString: [0, 1, 0, 0, 0, 0],
+          fifthString: [0, 1, 0, 0, 0, 0],
+          sixthString: [0, 0, 0, 0, 0, 0]
+        },
+      ],
+      eMinor: [
+        {
+          firstString: [0, 0, 0, 0, 0, 0],
+          secondString: [0, 0, 0, 0, 0, 0],
+          thirdString: [0, 0, 0, 0, 0, 0],
+          fourthString: [0, 1, 0, 0, 0, 0],
+          fifthString: [0, 1, 0, 0, 0, 0],
+          sixthString: [0, 0, 0, 0, 0, 0]
+        },
+      ],
       major: [
         {
           firstString: [1, 0, 0, 0, 0, 0],
@@ -276,21 +296,165 @@ export default {
           sixthString: [1, 0, 0, 0, 0, 0]
         },
       ],
+      chordTypeIndex: 0,
     }
   },
   methods: {
 
   },
   props: {
-    propMusicalKey: {
+    musicalKey: {
       type: String,
       required: true
     },
-    propChordType: {
+    chordType: {
       type: String,
       required: true
     }
   },
+  computed: {
+    fun1() {  // debug
+      if(this.musicalKey == "E") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          // data                      this.major[index].firstString[i]
+          this.firstString[i].marker = 1;
+          this.secondString[i].marker = 1;
+          this.thirdString[i].marker = 1;
+          this.fourthString[i].marker = 1;
+          this.fifthString[i].marker = 1;
+          this.sixthString[i].marker = 1;
+        }
+      } else if(this.musicalKey == "F") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          // data                      this.major[index].firstString[i]
+          this.firstString[i].marker = 0;
+          this.secondString[i].marker = 0;
+          this.thirdString[i].marker = 0;
+          this.fourthString[i].marker = 0;
+          this.fifthString[i].marker = 0;
+          this.sixthString[i].marker = 0;
+        }
+      }
+    }
+    /*
+    updateChordDisplay() {
+      // set starting fret; set chordType array[0]
+      if(this.musicalKey == "E") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(0);
+          this.setMarkers(this.eMajor, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(0);
+          this.setMarkers(this.eMinor, 0);
+        }
+      } else if(this.musicalKey == "F") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(0);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(0);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "F#") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(1);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "G") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(2);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "G#") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(3);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "A") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(4);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "A#") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(5);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "B") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(6);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "C") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(7);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "C#") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(8);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "D") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(9);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minor, 0);
+        }
+      } else if(this.musicalKey == "D#") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(10);
+          this.setMarkers(this.major, 0);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minor, 0);
+        }
+      }
+    },
+    setFretLabels(startingFret) {
+      for(let i = 0; i < fretLabels.length; i++) {
+        this.fretLabels[i].label = startingFret + i;
+      }
+    },
+    setMarkers(chordTypeArray, index) {
+      for(let i = 0; i < this.firstString.length; i++) {
+        // data                      this.major[index].firstString[i]
+        this.firstString[i].marker = chordTypeArray[index].firstString[i];
+        this.secondString[i].marker = chordTypeArray[index].secondString[i];
+        this.thirdString[i].marker = chordTypeArray[index].thirdString[i];
+        this.fourthString[i].marker = chordTypeArray[index].fourthString[i];
+        this.fifthString[i].marker = chordTypeArray[index].fifthString[i];
+        this.sixthString[i].marker = chordTypeArray[index].sixthString[i];
+      }
+    },
+    */
+  }
 
   /*
   computed: {

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <Picker @send-chord-to-root="sendChordToDisplay"></Picker>
-    <ChordDisplay :propMusicalKey="musicalKey"
-                  :propChordType="chordType"
+    <ChordDisplay :musical-key="musicalKey"
+                  :chord-type="chordType"
                   >
     </ChordDisplay>
   </div>
@@ -18,9 +18,11 @@ export default {
     Picker,
     ChordDisplay
   },
-  data: {
-    musicalKey: "A",
-    chordType: "Major"
+  data() {
+    return {
+      musicalKey: "A",
+      chordType: "Major"
+    }
   },
   methods: {
     sendChordToDisplay(chordKeyObject) {
