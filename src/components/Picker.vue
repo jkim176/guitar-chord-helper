@@ -5,6 +5,7 @@
       <label for="musicalKey">Key</label>
       <select id="musicalKey"
               v-model="musicalKey"
+              @change="sendChordToRoot"
               >
         <option>A</option>
         <option>A#</option>
@@ -25,17 +26,17 @@
       <label for="chordType">Chords</label>
       <select id="chordType"
               v-model="chordType"
+              @change="sendChordToRoot"
               >
         <option>Major</option>
         <option>Minor</option>
+        <option>7</option>
+        <option>maj7</option>
+        <option>m7</option>
+        <option>m-maj7</option>
       </select>
     </div>
 
-    <button id="getChordButton"
-            @click="sendChordToRoot"
-            >
-            Get
-    </button>
   </div>
 </template>
 
@@ -44,7 +45,7 @@ export default {
   name: "Picker",
   data() {
     return {
-      musicalKey: "A",
+      musicalKey: "F",
       chordType: "Major"
     }
   },

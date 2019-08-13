@@ -77,27 +77,27 @@ export default {
       fretLabels: [
         {
           labelId: "label0",
-          label: 4
+          label: 1
         },
         {
           labelId: "label1",
-          label: 5
+          label: 2
         },
         {
           labelId: "label2",
-          label: 6
+          label: 3
         },
         {
           labelId: "label3",
-          label: 7
+          label: 4
         },
         {
           labelId: "label4",
-          label: 8
+          label: 5
         },
         {
           labelId: "label5",
-          label: 9
+          label: 6
         }
       ],
       firstString: [  // marker 0,1,2 = (blank),circle,cross
@@ -256,51 +256,161 @@ export default {
           marker: 0
         },
       ],
-      eMajor: [
-        {
-          firstString: [0, 0, 0, 0, 0, 0],
-          secondString: [0, 0, 0, 0, 0, 0],
-          thirdString: [1, 0, 0, 0, 0, 0],
-          fourthString: [0, 1, 0, 0, 0, 0],
-          fifthString: [0, 1, 0, 0, 0, 0],
-          sixthString: [0, 0, 0, 0, 0, 0]
-        },
-      ],
-      eMinor: [
-        {
-          firstString: [0, 0, 0, 0, 0, 0],
-          secondString: [0, 0, 0, 0, 0, 0],
-          thirdString: [0, 0, 0, 0, 0, 0],
-          fourthString: [0, 1, 0, 0, 0, 0],
-          fifthString: [0, 1, 0, 0, 0, 0],
-          sixthString: [0, 0, 0, 0, 0, 0]
-        },
-      ],
-      major: [
-        {
-          firstString: [1, 0, 0, 0, 0, 0],
-          secondString: [1, 0, 0, 0, 0, 0],
-          thirdString: [0, 1, 0, 0, 0, 0],
-          fourthString: [0, 0, 1, 0, 0, 0],
-          fifthString: [0, 0, 1, 0, 0, 0],
-          sixthString: [1, 0, 0, 0, 0, 0]
-        },
-      ],
-      minor: [
-        {
-          firstString: [1, 0, 0, 0, 0, 0],
-          secondString: [1, 0, 0, 0, 0, 0],
-          thirdString: [1, 0, 0, 0, 0, 0],
-          fourthString: [0, 0, 1, 0, 0, 0],
-          fifthString: [0, 0, 1, 0, 0, 0],
-          sixthString: [1, 0, 0, 0, 0, 0]
-        },
-      ],
-      chordTypeIndex: 0,
+      /*
+      blank: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [0, 0, 0, 0, 0, 0],
+        fourthString: [0, 0, 0, 0, 0, 0],
+        fifthString:  [0, 0, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
+      */
+      majorBarre: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString:  [0, 1, 0, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [0, 0, 1, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      majorBarre2: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 1, 0, 0, 0],
+        thirdString:  [0, 0, 1, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [1, 0, 0, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      minorBarre: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [0, 0, 1, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      minorBarre2: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [0, 1, 0, 0, 0, 0],
+        thirdString:  [0, 0, 1, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [1, 0, 0, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      majorBarreMinor7: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString:  [0, 1, 0, 0, 0, 0],
+        fourthString: [1, 0, 0, 0, 0, 0],
+        fifthString:  [0, 0, 1, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      majorBarreMinor72: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 1, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [1, 0, 0, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      majorBarreMajor7: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString:  [0, 1, 0, 0, 0, 0],
+        fourthString: [0, 1, 0, 0, 0, 0],
+        fifthString:  [0, 0, 1, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      majorBarreMajor72: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 1, 0, 0, 0],
+        thirdString:  [0, 1, 0, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [1, 0, 0, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      minorBarreMinor7: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [1, 0, 0, 0, 0, 0],
+        fifthString:  [0, 0, 1, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      minorBarreMinor72: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [0, 1, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [1, 0, 0, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      minorBarreMajor7: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 1, 0, 0, 0, 0],
+        fifthString:  [0, 0, 1, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      minorBarreMajor72: {
+        firstString:  [1, 0, 0, 0, 0, 0],
+        secondString: [0, 1, 0, 0, 0, 0],
+        thirdString:  [0, 1, 0, 0, 0, 0],
+        fourthString: [0, 0, 1, 0, 0, 0],
+        fifthString:  [1, 0, 0, 0, 0, 0],
+        sixthString:  [1, 0, 0, 0, 0, 0]
+      },
+      openEMajor: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 1, 0, 0, 0, 0],
+        fifthString:  [0, 1, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
+      openEMinor: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [0, 0, 0, 0, 0, 0],
+        fourthString: [0, 1, 0, 0, 0, 0],
+        fifthString:  [0, 1, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
+      openEMajorMinor7: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 0, 0, 0, 0, 0],
+        fifthString:  [0, 1, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
+      openEMajorMajor7: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [1, 0, 0, 0, 0, 0],
+        fifthString:  [0, 1, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
+      openEMinorMinor7: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [0, 0, 0, 0, 0, 0],
+        fifthString:  [0, 1, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
+      openEMinorMajor7: {
+        firstString:  [0, 0, 0, 0, 0, 0],
+        secondString: [0, 0, 0, 0, 0, 0],
+        thirdString:  [1, 0, 0, 0, 0, 0],
+        fourthString: [1, 0, 0, 0, 0, 0],
+        fifthString:  [0, 1, 0, 0, 0, 0],
+        sixthString:  [0, 0, 0, 0, 0, 0]
+      },
     }
-  },
-  methods: {
-
   },
   props: {
     musicalKey: {
@@ -312,277 +422,151 @@ export default {
       required: true
     }
   },
-  computed: {
-    fun1() {  // debug
-      if(this.musicalKey == "E") {
-        for(let i = 0; i < this.firstString.length; i++) {
-          // data                      this.major[index].firstString[i]
-          this.firstString[i].marker = 1;
-          this.secondString[i].marker = 1;
-          this.thirdString[i].marker = 1;
-          this.fourthString[i].marker = 1;
-          this.fifthString[i].marker = 1;
-          this.sixthString[i].marker = 1;
-        }
-      } else if(this.musicalKey == "F") {
-        for(let i = 0; i < this.firstString.length; i++) {
-          // data                      this.major[index].firstString[i]
-          this.firstString[i].marker = 0;
-          this.secondString[i].marker = 0;
-          this.thirdString[i].marker = 0;
-          this.fourthString[i].marker = 0;
-          this.fifthString[i].marker = 0;
-          this.sixthString[i].marker = 0;
-        }
-      }
-    }
-    /*
-    updateChordDisplay() {
-      // set starting fret; set chordType array[0]
-      if(this.musicalKey == "E") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(0);
-          this.setMarkers(this.eMajor, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(0);
-          this.setMarkers(this.eMinor, 0);
-        }
-      } else if(this.musicalKey == "F") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(0);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(0);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "F#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(1);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "G") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(2);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "G#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(3);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "A") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(4);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "A#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(5);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "B") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(6);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "C") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(7);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "C#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(8);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "D") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(9);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minor, 0);
-        }
-      } else if(this.musicalKey == "D#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(10);
-          this.setMarkers(this.major, 0);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minor, 0);
-        }
-      }
-    },
+  methods: {
     setFretLabels(startingFret) {
-      for(let i = 0; i < fretLabels.length; i++) {
+      for(let i = 0; i < this.fretLabels.length; i++) {
         this.fretLabels[i].label = startingFret + i;
       }
     },
-    setMarkers(chordTypeArray, index) {
+    setMarkers(chordType) {
       for(let i = 0; i < this.firstString.length; i++) {
-        // data                      this.major[index].firstString[i]
-        this.firstString[i].marker = chordTypeArray[index].firstString[i];
-        this.secondString[i].marker = chordTypeArray[index].secondString[i];
-        this.thirdString[i].marker = chordTypeArray[index].thirdString[i];
-        this.fourthString[i].marker = chordTypeArray[index].fourthString[i];
-        this.fifthString[i].marker = chordTypeArray[index].fifthString[i];
-        this.sixthString[i].marker = chordTypeArray[index].sixthString[i];
+        this.firstString[i].marker = chordType.firstString[i];
+        this.secondString[i].marker = chordType.secondString[i];
+        this.thirdString[i].marker = chordType.thirdString[i];
+        this.fourthString[i].marker = chordType.fourthString[i];
+        this.fifthString[i].marker = chordType.fifthString[i];
+        this.sixthString[i].marker = chordType.sixthString[i];
       }
     },
-    */
-  }
+  },
+  watch: {
+    musicalKey(newVal, oldVal) {
+      if(newVal == "E") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMajor);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMinor);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMajorMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMajorMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMinorMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMinorMajor7);
+        }
+      } else if(newVal == "F") {
+        if(this.chordType == "Major") {
+          this.setFretLabels(1);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minorBarreMajor7);
+        }
+      } else if(newVal == "F#") {
 
-  /*
-  computed: {
-    setChordDisplay() { // initializes display to type[0] ... change variation index with buttons
-      // set string labels
-      if(this.musicalKey == "F") {
-        this.startingFret = 0;
+      } else if(newVal == "G") {
+
+      } else if(newVal == "G#") {
+
+      } else if(newVal == "A") {
+
+      } else if(newVal == "A#") {
+
+      } else if(newVal == "B") {
+
+      } else if(newVal == "C") {
+
+      } else if(newVal == "C#") {
+
+      } else if(newVal == "D") {
+
+      } else if(newVal == "D#") {
+
+      }
+    },
+    chordType(newVal, oldVal) {
+      if(this.musicalKey == "E") {
+        if(newVal == "Major") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMajor);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMinor);
+        } else if(newVal == "7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMajorMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMajorMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMinorMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.openEMinorMajor7);
+        }
+      } else if(this.musicalKey == "F") {
+        if(newVal == "Major") {
+          this.setFretLabels(1);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(1);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "F#") {
-        this.startingFret = 1;
+
       } else if(this.musicalKey == "G") {
-        this.startingFret = 2;
+
       } else if(this.musicalKey == "G#") {
-        this.startingFret = 3;
+
       } else if(this.musicalKey == "A") {
-        this.startingFret = 4;
+
       } else if(this.musicalKey == "A#") {
-        this.startingFret = 5;
+
       } else if(this.musicalKey == "B") {
-        this.startingFret = 6;
+
       } else if(this.musicalKey == "C") {
-        this.startingFret = 7;
+
       } else if(this.musicalKey == "C#") {
-        this.startingFret = 8;
+
       } else if(this.musicalKey == "D") {
-        this.startingFret = 9;
+
       } else if(this.musicalKey == "D#") {
-        this.startingFret = 10;
-      } else {
-        this.startingFret = 0;
-      }
-      for(let i = 0; i < this.fretLabels.length; i++) {
-        this.fretLabels[i].label = this.startingFret + i;
-      }
-      // set markers
-      if((this.chordType == "Major" || this.chordType == "Minor") && this.musicalKey == "E") {
 
       }
-      else if(this.chordType == "Major") {
-        for(let i = 0; i < this.firstString.length; i++) {
-          this.firstString[i].marker = this.major[0].firstString[i];
-          this.secondString[i].marker = this.major[0].secondString[i];
-          this.thirdString[i].marker = this.major[0].thirdString[i];
-          this.fourthString[i].marker = this.major[0].fourthString[i];
-          this.fifthString[i].marker = this.major[0].fifthString[i];
-          this.sixthString[i].marker = this.major[0].sixthString[i];
-        }
-      } else if(this.chordType == "Minor") {
-        for(let i = 0; i < this.firstString.length; i++) {
-          this.firstString[i].marker = this.minor[0].firstString[i];
-          this.secondString[i].marker = this.minor[0].secondString[i];
-          this.thirdString[i].marker = this.minor[0].thirdString[i];
-          this.fourthString[i].marker = this.minor[0].fourthString[i];
-          this.fifthString[i].marker = this.minor[0].fifthString[i];
-          this.sixthString[i].marker = this.minor[0].sixthString[i];
-        }
-      }
-    }
+    },
   }
-  */
-
-  /*
-  mounted() {
-    this.$root.$on('send-chord-to-display', chordKeyObject => {
-      let chordType = chordKeyObject.chordType;
-      let musicalKey = chordKeyObject.musicalKey;
-      // cannot call method from mounted
-      if(chordKeyObject.chordType == "Major") {
-        for(let i = 0; i < this.firstString.length; i++) {
-          this.firstString[i].marker = this.major.firstString[i];
-          this.secondString[i].marker = this.major.secondString[i];
-          this.thirdString[i].marker = this.major.thirdString[i];
-          this.fourthString[i].marker = this.major.fourthString[i];
-          this.fifthString[i].marker = this.major.fifthString[i];
-          this.sixthString[i].marker = this.major.sixthString[i];
-        }
-      } else if(chordKeyObject.chordType == "Minor") {
-        for(let i = 0; i < this.firstString.length; i++) {
-          this.firstString[i].marker = this.minor.firstString[i];
-          this.secondString[i].marker = this.minor.secondString[i];
-          this.thirdString[i].marker = this.minor.thirdString[i];
-          this.fourthString[i].marker = this.minor.fourthString[i];
-          this.fifthString[i].marker = this.minor.fifthString[i];
-          this.sixthString[i].marker = this.minor.sixthString[i];
-        }
-      }
-      // TODO: frets based on variations
-      let startingFret;
-      switch(chordKeyObject.musicalKey) {
-          case "F":
-            startingFret = 0;
-            break;
-          case "F#":
-            startingFret = 1;
-            break;
-          case "G":
-            startingFret = 2;
-            break;
-          case "G#":
-            startingFret = 3;
-            break;
-          case "A":
-            startingFret = 4;
-            break;
-          case "A#":
-            startingFret = 5;
-            break;
-          case "B":
-            startingFret = 6;
-            break;
-          case "C":
-            startingFret = 7;
-            break;
-          case "C#":
-            startingFret = 8;
-            break;
-          case "D":
-            startingFret = 9;
-            break;
-          case "D#":
-            startingFret = 10;
-            break;
-      }
-      for(let i = 0; i < this.fretLabels.length; i++) {
-        this.fretLabels[i].label = startingFret + i;
-      }
-    });
-  }
-  */
 }
 </script>
 
