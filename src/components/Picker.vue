@@ -45,7 +45,7 @@ export default {
   name: "Picker",
   data() {
     return {
-      musicalKey: "F",
+      musicalKey: "A",
       chordType: "Major"
     }
   },

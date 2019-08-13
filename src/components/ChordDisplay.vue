@@ -77,27 +77,27 @@ export default {
       fretLabels: [
         {
           labelId: "label0",
-          label: 1
-        },
-        {
-          labelId: "label1",
-          label: 2
-        },
-        {
-          labelId: "label2",
-          label: 3
-        },
-        {
-          labelId: "label3",
-          label: 4
-        },
-        {
-          labelId: "label4",
           label: 5
         },
         {
-          labelId: "label5",
+          labelId: "label1",
           label: 6
+        },
+        {
+          labelId: "label2",
+          label: 7
+        },
+        {
+          labelId: "label3",
+          label: 8
+        },
+        {
+          labelId: "label4",
+          label: 9
+        },
+        {
+          labelId: "label5",
+          label: 10
         }
       ],
       firstString: [  // marker 0,1,2 = (blank),circle,cross
@@ -482,25 +482,205 @@ export default {
           this.setMarkers(this.minorBarreMajor7);
         }
       } else if(newVal == "F#") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(2);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "G") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(3);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "G#") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(4);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(4);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "A") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(5);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "A#") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(6);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "B") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(7);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "C") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(8);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "C#") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(9);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "D") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(10);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(newVal == "D#") {
-
+        if(this.chordType == "Major") {
+          this.setFretLabels(11);
+          this.setMarkers(this.majorBarre);
+        } else if(this.chordType == "Minor") {
+          this.setFretLabels(11);
+          this.setMarkers(this.minorBarre);
+        } else if(this.chordType == "7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(this.chordType == "maj7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(this.chordType == "m7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(this.chordType == "m-maj7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       }
     },
     chordType(newVal, oldVal) {
@@ -545,25 +725,205 @@ export default {
           this.setMarkers(this.minorBarreMajor7);
         }
       } else if(this.musicalKey == "F#") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(2);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(2);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "G") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(3);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(3);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "G#") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(4);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(4);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(4);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "A") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(5);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(5);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "A#") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(6);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(6);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "B") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(7);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(7);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "C") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(8);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(8);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "C#") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(9);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(9);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "D") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(10);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(10);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       } else if(this.musicalKey == "D#") {
-
+        if(newVal == "Major") {
+          this.setFretLabels(11);
+          this.setMarkers(this.majorBarre);
+        } else if(newVal == "Minor") {
+          this.setFretLabels(11);
+          this.setMarkers(this.minorBarre);
+        } else if(newVal == "7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.majorBarreMinor7);
+        } else if(newVal == "maj7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.majorBarreMajor7);
+        } else if(newVal == "m7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.minorBarreMinor7);
+        } else if(newVal == "m-maj7") {
+          this.setFretLabels(11);
+          this.setMarkers(this.minorBarreMajor7);
+        }
       }
     },
   }
