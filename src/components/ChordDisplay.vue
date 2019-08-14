@@ -70,6 +70,27 @@
 </template>
 
 <script>
+
+function MajorBarre(){
+  return {
+    firstString:[],
+    secondString:[],
+    thirdString:[],
+    fourthString:[],
+    fifthString:[],
+    sixthString:[],
+  }
+}
+
+const Chords = {
+  'E':{
+    'Major':{
+      chords:MajorBarre(),
+      fretLabels:{}
+    }
+  }
+}
+
 export default {
   name: "ChordDisplay",
   data() {
@@ -266,6 +287,7 @@ export default {
         sixthString:  [0, 0, 0, 0, 0, 0]
       },
       */
+
       majorBarre: {
         firstString:  [1, 0, 0, 0, 0, 0],
         secondString: [1, 0, 0, 0, 0, 0],

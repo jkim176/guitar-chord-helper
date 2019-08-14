@@ -4,9 +4,8 @@
     <div>
       <label for="musicalKey">Key</label>
       <select id="musicalKey"
-              v-model="musicalKey"
-              @change="sendChordToRoot"
-              >
+              @change="sendMusicalKeyToRoot($event)"
+      >
         <option>A</option>
         <option>A#</option>
         <option>B</option>
@@ -25,9 +24,8 @@
     <div>
       <label for="chordType">Chords</label>
       <select id="chordType"
-              v-model="chordType"
-              @change="sendChordToRoot"
-              >
+              @change="sendChordTypeToRoot($event)"
+      >
         <option>Major</option>
         <option>Minor</option>
         <option>7</option>
@@ -43,22 +41,23 @@
 <script>
 export default {
   name: "Picker",
-  data() {
-    return {
-      musicalKey: "A",
-      chordType: "Major"
+  props: {
+    musicalKey: {
+      type: String,
+      required: true
+    },
+    chordType: {
+      type: String,
+      required: true
     }
   },
   methods: {
-    sendChordToRoot() {
-      let selectedChordType = this.chordType;
-      let selectedMusicalKey = this.musicalKey;
-      let chordKeyObject = {
-        chordType: selectedChordType,
-        musicalKey: selectedMusicalKey
-      };
-      this.$emit('send-chord-to-root', chordKeyObject);
+    sendMusicalKeyToRoot(event) {
+      this.$emit('send-musical-key-to-root', event.target.value);
     },
+    sendChordTypeToRoot(event) {
+      this.$emit('send-chord-type-to-root', event.target.value);
+    }
   }
 }
 </script>

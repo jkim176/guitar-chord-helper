@@ -1,9 +1,15 @@
 <template>
   <div id="app">
-    <Picker @send-chord-to-root="sendChordToDisplay"></Picker>
+    <Picker @send-musical-key-to-root="updateMusicalKey"
+            @send-chord-type-to-root="updateChordType"
+            :musical-key="musicalKey"
+            :chord-type="chordType"
+    >
+    </Picker>
+
     <ChordDisplay :musical-key="musicalKey"
                   :chord-type="chordType"
-                  >
+    >
     </ChordDisplay>
   </div>
 </template>
@@ -25,9 +31,11 @@ export default {
     }
   },
   methods: {
-    sendChordToDisplay(chordKeyObject) {
-      this.musicalKey = chordKeyObject.musicalKey;
-      this.chordType = chordKeyObject.chordType;
+    updateMusicalKey(newMusicalKey) {
+      this.musicalKey = newMusicalKey;
+    },
+    updateChordType(newChordType) {
+      this.chordType = newChordType;
     }
   }
 }
