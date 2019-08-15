@@ -93,6 +93,10 @@ const aMajor = [
   {
     startingFret: 5,
     chordPattern: barreMajor1
+  },
+  {
+    startingFret: 12,
+    chordPattern: barreMajor2
   }
 ];
 const aMinor = [

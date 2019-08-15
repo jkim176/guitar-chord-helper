@@ -34,12 +34,13 @@
     <div>
       <button id="previousChordArrayIndexButton"
               @click="decreaseChordArrayIndex"
-
+              v-show="chordArrayIndex > 0"
       >
         &lt
       </button>
       <button id="nextChordArrayIndexButton"
               @click="increaseChordArrayIndex"
+              v-show="chordArrayIndex < chordArray.length - 1"
       >
         &gt
       </button>
