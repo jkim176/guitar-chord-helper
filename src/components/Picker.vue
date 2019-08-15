@@ -28,11 +28,21 @@
       >
         <option>Major</option>
         <option>Minor</option>
-        <option>7</option>
-        <option>maj7</option>
-        <option>m7</option>
-        <option>m-maj7</option>
       </select>
+    </div>
+
+    <div>
+      <button id="previousChordArrayIndexButton"
+              @click="decreaseChordArrayIndex"
+
+      >
+        &lt
+      </button>
+      <button id="nextChordArrayIndexButton"
+              @click="increaseChordArrayIndex"
+      >
+        &gt
+      </button>
     </div>
 
   </div>
@@ -49,6 +59,14 @@ export default {
     chordType: {
       type: String,
       required: true
+    },
+    chordArray: {
+      type: Array,
+      required: true
+    },
+    chordArrayIndex: {
+      type: Number,
+      required: true
     }
   },
   methods: {
@@ -57,6 +75,18 @@ export default {
     },
     sendChordTypeToRoot(event) {
       this.$emit('send-chord-type-to-root', event.target.value);
+    },
+    decreaseChordArrayIndex() {
+      if(this.chordArrayIndex > 0) {
+        let newIndex = this.chordArrayIndex - 1;
+        this.$emit('decrease-chord-array-index', newIndex);
+      }
+    },
+    increaseChordArrayIndex() {
+      if(this.chordArrayIndex < this.chordArray.length - 1) {
+        let newIndex = this.chordArrayIndex + 1;
+        this.$emit('increase-chord-array-index', newIndex);
+      }
     }
   }
 }

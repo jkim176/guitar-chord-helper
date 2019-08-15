@@ -71,6 +71,8 @@
 
 <script>
 
+
+/*
 function MajorBarre(){
   return {
     firstString:[],
@@ -90,6 +92,7 @@ const Chords = {
     }
   }
 }
+*/
 
 export default {
   name: "ChordDisplay",
@@ -98,33 +101,33 @@ export default {
       fretLabels: [
         {
           labelId: "label0",
-          label: 5
+          label: 1
         },
         {
           labelId: "label1",
-          label: 6
+          label: 2
         },
         {
           labelId: "label2",
-          label: 7
+          label: 3
         },
         {
           labelId: "label3",
-          label: 8
+          label: 4
         },
         {
           labelId: "label4",
-          label: 9
+          label: 5
         },
         {
           labelId: "label5",
-          label: 10
+          label: 6
         }
       ],
       firstString: [  // marker 0,1,2 = (blank),circle,cross
         {
           cellId: 0,
-          marker: 1
+          marker: 0
         },
         {
           cellId: 1,
@@ -150,11 +153,11 @@ export default {
       secondString: [
         {
           cellId: 10,
-          marker: 1
+          marker: 0
         },
         {
           cellId: 11,
-          marker: 0
+          marker: 1
         },
         {
           cellId: 12,
@@ -206,11 +209,11 @@ export default {
         },
         {
           cellId: 31,
-          marker: 0
+          marker: 1
         },
         {
           cellId: 32,
-          marker: 1
+          marker: 0
         },
         {
           cellId: 33,
@@ -236,7 +239,7 @@ export default {
         },
         {
           cellId: 42,
-          marker: 1
+          marker: 0
         },
         {
           cellId: 43,
@@ -254,7 +257,7 @@ export default {
       sixthString: [
         {
           cellId: 50,
-          marker: 1
+          marker: 0
         },
         {
           cellId: 51,
@@ -276,677 +279,44 @@ export default {
           cellId: 55,
           marker: 0
         },
-      ],
-      /*
-      blank: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [0, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 0, 0, 0, 0],
-        fifthString:  [0, 0, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
-      */
-
-      majorBarre: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString:  [0, 1, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [0, 0, 1, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      majorBarre2: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 1, 0, 0, 0],
-        thirdString:  [0, 0, 1, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [1, 0, 0, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      minorBarre: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [0, 0, 1, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      minorBarre2: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [0, 1, 0, 0, 0, 0],
-        thirdString:  [0, 0, 1, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [1, 0, 0, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      majorBarreMinor7: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString:  [0, 1, 0, 0, 0, 0],
-        fourthString: [1, 0, 0, 0, 0, 0],
-        fifthString:  [0, 0, 1, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      majorBarreMinor72: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 1, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [1, 0, 0, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      majorBarreMajor7: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString:  [0, 1, 0, 0, 0, 0],
-        fourthString: [0, 1, 0, 0, 0, 0],
-        fifthString:  [0, 0, 1, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      majorBarreMajor72: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 1, 0, 0, 0],
-        thirdString:  [0, 1, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [1, 0, 0, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      minorBarreMinor7: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [1, 0, 0, 0, 0, 0],
-        fifthString:  [0, 0, 1, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      minorBarreMinor72: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [0, 1, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [1, 0, 0, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      minorBarreMajor7: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [1, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 1, 0, 0, 0, 0],
-        fifthString:  [0, 0, 1, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      minorBarreMajor72: {
-        firstString:  [1, 0, 0, 0, 0, 0],
-        secondString: [0, 1, 0, 0, 0, 0],
-        thirdString:  [0, 1, 0, 0, 0, 0],
-        fourthString: [0, 0, 1, 0, 0, 0],
-        fifthString:  [1, 0, 0, 0, 0, 0],
-        sixthString:  [1, 0, 0, 0, 0, 0]
-      },
-      openEMajor: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 1, 0, 0, 0, 0],
-        fifthString:  [0, 1, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
-      openEMinor: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [0, 0, 0, 0, 0, 0],
-        fourthString: [0, 1, 0, 0, 0, 0],
-        fifthString:  [0, 1, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
-      openEMajorMinor7: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 0, 0, 0, 0],
-        fifthString:  [0, 1, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
-      openEMajorMajor7: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [1, 0, 0, 0, 0, 0],
-        fifthString:  [0, 1, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
-      openEMinorMinor7: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [0, 0, 0, 0, 0, 0],
-        fifthString:  [0, 1, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
-      openEMinorMajor7: {
-        firstString:  [0, 0, 0, 0, 0, 0],
-        secondString: [0, 0, 0, 0, 0, 0],
-        thirdString:  [1, 0, 0, 0, 0, 0],
-        fourthString: [1, 0, 0, 0, 0, 0],
-        fifthString:  [0, 1, 0, 0, 0, 0],
-        sixthString:  [0, 0, 0, 0, 0, 0]
-      },
+      ]
     }
   },
   props: {
-    musicalKey: {
-      type: String,
+    chordArray: {
+      type: Array,
       required: true
     },
-    chordType: {
-      type: String,
+    chordArrayIndex: {
+      type: Number,
       required: true
     }
   },
   methods: {
-    setFretLabels(startingFret) {
+    setFretLabels(chordArray, chordArrayIndex) {
       for(let i = 0; i < this.fretLabels.length; i++) {
-        this.fretLabels[i].label = startingFret + i;
+        this.fretLabels[i].label = chordArray[chordArrayIndex].startingFret + i;
       }
     },
-    setMarkers(chordType) {
+    setMarkers(chordArray, chordArrayIndex) {
       for(let i = 0; i < this.firstString.length; i++) {
-        this.firstString[i].marker = chordType.firstString[i];
-        this.secondString[i].marker = chordType.secondString[i];
-        this.thirdString[i].marker = chordType.thirdString[i];
-        this.fourthString[i].marker = chordType.fourthString[i];
-        this.fifthString[i].marker = chordType.fifthString[i];
-        this.sixthString[i].marker = chordType.sixthString[i];
+        this.firstString[i].marker = chordArray[chordArrayIndex].chordPattern.firstString[i];
+        this.secondString[i].marker = chordArray[chordArrayIndex].chordPattern.secondString[i];
+        this.thirdString[i].marker = chordArray[chordArrayIndex].chordPattern.thirdString[i];
+        this.fourthString[i].marker = chordArray[chordArrayIndex].chordPattern.fourthString[i];
+        this.fifthString[i].marker = chordArray[chordArrayIndex].chordPattern.fifthString[i];
+        this.sixthString[i].marker = chordArray[chordArrayIndex].chordPattern.sixthString[i];
       }
     },
   },
   watch: {
-    musicalKey(newVal, oldVal) {
-      if(newVal == "E") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMajor);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMinor);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMajorMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMajorMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMinorMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMinorMajor7);
-        }
-      } else if(newVal == "F") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(1);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "F#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(2);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "G") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(3);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "G#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(4);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(4);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "A") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(5);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "A#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(6);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "B") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(7);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "C") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(8);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "C#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(9);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "D") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(10);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(newVal == "D#") {
-        if(this.chordType == "Major") {
-          this.setFretLabels(11);
-          this.setMarkers(this.majorBarre);
-        } else if(this.chordType == "Minor") {
-          this.setFretLabels(11);
-          this.setMarkers(this.minorBarre);
-        } else if(this.chordType == "7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(this.chordType == "maj7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(this.chordType == "m7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(this.chordType == "m-maj7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      }
+    chordArray(newVal, oldVal) {
+      this.setFretLabels(newVal, this.chordArrayIndex);
+      this.setMarkers(newVal, this.chordArrayIndex);
     },
-    chordType(newVal, oldVal) {
-      if(this.musicalKey == "E") {
-        if(newVal == "Major") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMajor);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMinor);
-        } else if(newVal == "7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMajorMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMajorMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMinorMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.openEMinorMajor7);
-        }
-      } else if(this.musicalKey == "F") {
-        if(newVal == "Major") {
-          this.setFretLabels(1);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(1);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "F#") {
-        if(newVal == "Major") {
-          this.setFretLabels(2);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(2);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "G") {
-        if(newVal == "Major") {
-          this.setFretLabels(3);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(3);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "G#") {
-        if(newVal == "Major") {
-          this.setFretLabels(4);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(4);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(4);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "A") {
-        if(newVal == "Major") {
-          this.setFretLabels(5);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(5);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "A#") {
-        if(newVal == "Major") {
-          this.setFretLabels(6);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(6);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "B") {
-        if(newVal == "Major") {
-          this.setFretLabels(7);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(7);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "C") {
-        if(newVal == "Major") {
-          this.setFretLabels(8);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(8);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "C#") {
-        if(newVal == "Major") {
-          this.setFretLabels(9);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(9);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "D") {
-        if(newVal == "Major") {
-          this.setFretLabels(10);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(10);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      } else if(this.musicalKey == "D#") {
-        if(newVal == "Major") {
-          this.setFretLabels(11);
-          this.setMarkers(this.majorBarre);
-        } else if(newVal == "Minor") {
-          this.setFretLabels(11);
-          this.setMarkers(this.minorBarre);
-        } else if(newVal == "7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.majorBarreMinor7);
-        } else if(newVal == "maj7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.majorBarreMajor7);
-        } else if(newVal == "m7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.minorBarreMinor7);
-        } else if(newVal == "m-maj7") {
-          this.setFretLabels(11);
-          this.setMarkers(this.minorBarreMajor7);
-        }
-      }
+    chordArrayIndex(newVal, oldVal) {
+      this.setFretLabels(this.chordArray, newVal);
+      this.setMarkers(this.chordArray, newVal);
     },
   }
 }
