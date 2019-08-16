@@ -8,7 +8,7 @@
       <div v-for="(fret, index) in fretLabels"
            :key="fret.labelId"
            class="fret-label"
-           >
+      >
            {{ fret.label }}
       </div>
     </div>
@@ -20,7 +20,7 @@
            :class="{blank: firstString[index].marker == 0,
                     circle: firstString[index].marker == 1,
                     cross: firstString[index].marker == 2}"
-           >
+      >
       </div>
     </div>
 
@@ -31,7 +31,7 @@
            :class="{blank: secondString[index].marker == 0,
                     circle: secondString[index].marker == 1,
                     cross: secondString[index].marker == 2}"
-           >
+      >
       </div>
     </div>
 
@@ -42,7 +42,7 @@
            :class="{blank: thirdString[index].marker == 0,
                     circle: thirdString[index].marker == 1,
                     cross: thirdString[index].marker == 2}"
-           >
+      >
       </div>
     </div>
 
@@ -53,7 +53,7 @@
            :class="{blank: fourthString[index].marker == 0,
                     circle: fourthString[index].marker == 1,
                     cross: fourthString[index].marker == 2}"
-           >
+      >
       </div>
     </div>
 
@@ -64,7 +64,7 @@
            :class="{blank: fifthString[index].marker == 0,
                     circle: fifthString[index].marker == 1,
                     cross: fifthString[index].marker == 2}"
-           >
+      >
       </div>
     </div>
 
@@ -75,7 +75,7 @@
            :class="{blank: sixthString[index].marker == 0,
                     circle: sixthString[index].marker == 1,
                     cross: sixthString[index].marker == 2}"
-           >
+      >
       </div>
     </div>
 
@@ -194,19 +194,16 @@ export default {
 }
 .fret {
   flex: 1 1 50px;
-  border: solid;
 }
 .blank {
   /* blank content */
 }
 .circle {
-
   background: black;
   border-radius: 50%;
 }
 .cross {
   /* TODO: not implemented */
-
   background: red;
   border-radius: 50%;
 }

@@ -31,19 +31,26 @@
       </select>
     </div>
 
-    <div>
-      <button id="previousChordArrayIndexButton"
-              @click="decreaseChordArrayIndex"
-              v-show="chordArrayIndex > 0"
+    <div class="variation-button-container">
+      <div class="previous-button"
       >
-        &lt
-      </button>
-      <button id="nextChordArrayIndexButton"
-              @click="increaseChordArrayIndex"
-              v-show="chordArrayIndex < chordArray.length - 1"
+        <button id="previousChordArrayIndexButton"
+                @click="decreaseChordArrayIndex"
+                v-show="chordArrayIndex > 0"
+        >
+          &lt
+        </button>
+      </div>
+
+      <div class="next-button"
       >
-        &gt
-      </button>
+        <button id="nextChordArrayIndexButton"
+                @click="increaseChordArrayIndex"
+                v-show="chordArrayIndex < chordArray.length - 1"
+        >
+          &gt
+        </button>
+      </div>
     </div>
 
   </div>
@@ -95,5 +102,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .variation-button-container {
+    display: flex;
+    justify-content: center;
+  }
+  .previous-button {
+    flex: 0 0 50px;
+  }
+  .next-button {
+    flex: 0 0 50px;
+  }
 </style>

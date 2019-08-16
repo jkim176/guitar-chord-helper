@@ -11,8 +11,7 @@
     >
     </Picker>
 
-    <ChordDisplay
-                  :chord-array="chordArray"
+    <ChordDisplay :chord-array="chordArray"
                   :chord-array-index="chordArrayIndex"
                   :fret-labels="fretLabels"
                   :first-string="firstString"
