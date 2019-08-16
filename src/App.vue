@@ -40,14 +40,21 @@ const blank = {
   sixthString:  [0, 0, 0, 0, 0, 0]
 };
 */
-
+const openCMajor = {
+  firstString:  [0, 0, 0, 0, 0, 0],
+  secondString: [1, 0, 0, 0, 0, 0],
+  thirdString:  [0, 0, 0, 0, 0, 0],
+  fourthString: [0, 1, 0, 0, 0, 0],
+  fifthString:  [0, 0, 1, 0, 0, 0],
+  sixthString:  [2, 0, 0, 0, 0, 0]
+};
 const openAMajor = {
   firstString:  [0, 0, 0, 0, 0, 0],
   secondString: [0, 1, 0, 0, 0, 0],
   thirdString:  [0, 1, 0, 0, 0, 0],
   fourthString: [0, 1, 0, 0, 0, 0],
   fifthString:  [0, 0, 0, 0, 0, 0],
-  sixthString:  [0, 0, 0, 0, 0, 0]
+  sixthString:  [2, 0, 0, 0, 0, 0]
 };
 const openAMinor = {
   firstString:  [0, 0, 0, 0, 0, 0],
@@ -55,7 +62,47 @@ const openAMinor = {
   thirdString:  [0, 1, 0, 0, 0, 0],
   fourthString: [0, 1, 0, 0, 0, 0],
   fifthString:  [0, 0, 0, 0, 0, 0],
+  sixthString:  [2, 0, 0, 0, 0, 0]
+};
+const openGMajor = {
+  firstString:  [0, 0, 1, 0, 0, 0],
+  secondString: [0, 0, 0, 0, 0, 0],
+  thirdString:  [0, 0, 0, 0, 0, 0],
+  fourthString: [0, 0, 0, 0, 0, 0],
+  fifthString:  [0, 1, 0, 0, 0, 0],
+  sixthString:  [0, 0, 1, 0, 0, 0]
+};
+const openEMajor = {
+  firstString:  [0, 0, 0, 0, 0, 0],
+  secondString: [0, 0, 0, 0, 0, 0],
+  thirdString:  [1, 0, 0, 0, 0, 0],
+  fourthString: [0, 1, 0, 0, 0, 0],
+  fifthString:  [0, 1, 0, 0, 0, 0],
   sixthString:  [0, 0, 0, 0, 0, 0]
+};
+const openEMinor = {
+  firstString:  [0, 0, 0, 0, 0, 0],
+  secondString: [0, 0, 0, 0, 0, 0],
+  thirdString:  [0, 0, 0, 0, 0, 0],
+  fourthString: [0, 1, 0, 0, 0, 0],
+  fifthString:  [0, 1, 0, 0, 0, 0],
+  sixthString:  [0, 0, 0, 0, 0, 0]
+};
+const openDMajor = {
+  firstString:  [0, 1, 0, 0, 0, 0],
+  secondString: [0, 0, 1, 0, 0, 0],
+  thirdString:  [0, 1, 0, 0, 0, 0],
+  fourthString: [0, 0, 0, 0, 0, 0],
+  fifthString:  [2, 0, 0, 0, 0, 0],
+  sixthString:  [2, 0, 0, 0, 0, 0]
+};
+const openDMinor = {
+  firstString:  [1, 0, 0, 0, 0, 0],
+  secondString: [0, 0, 1, 0, 0, 0],
+  thirdString:  [0, 1, 0, 0, 0, 0],
+  fourthString: [0, 0, 0, 0, 0, 0],
+  fifthString:  [2, 0, 0, 0, 0, 0],
+  sixthString:  [2, 0, 0, 0, 0, 0]
 };
 const barreMajor1 = {
   firstString:  [1, 0, 0, 0, 0, 0],
@@ -71,7 +118,7 @@ const barreMajor2 = {
   thirdString:  [0, 0, 1, 0, 0, 0],
   fourthString: [0, 0, 1, 0, 0, 0],
   fifthString:  [1, 0, 0, 0, 0, 0],
-  sixthString:  [1, 0, 0, 0, 0, 0]
+  sixthString:  [2, 0, 0, 0, 0, 0]
 };
 const barreMinor1 = {
   firstString:  [1, 0, 0, 0, 0, 0],
@@ -87,7 +134,7 @@ const barreMinor2 = {
   thirdString:  [0, 0, 1, 0, 0, 0],
   fourthString: [0, 0, 1, 0, 0, 0],
   fifthString:  [1, 0, 0, 0, 0, 0],
-  sixthString:  [1, 0, 0, 0, 0, 0]
+  sixthString:  [2, 0, 0, 0, 0, 0]
 }
 //
 //
@@ -117,6 +164,243 @@ const aMinor = [
     chordPattern: barreMinor1
   }
 ];
+const aSharpMajor = [
+  {
+    startingFret: 1,
+    chordPattern: barreMajor2
+  },
+  {
+    startingFret: 6,
+    chordPattern: barreMajor1
+  }
+];
+const aSharpMinor = [
+  {
+    startingFret: 1,
+    chordPattern: barreMinor2
+  },
+  {
+    startingFret: 6,
+    chordPattern: barreMinor1
+  }
+];
+const bMajor = [
+  {
+    startingFret: 2,
+    chordPattern: barreMajor2
+  },
+  {
+    startingFret: 7,
+    chordPattern: barreMajor1
+  }
+];
+const bMinor = [
+  {
+    startingFret: 2,
+    chordPattern: barreMinor2
+  },
+  {
+    startingFret: 7,
+    chordPattern: barreMinor1
+  }
+];
+const cMajor = [
+  {
+    startingFret: 1,
+    chordPattern: openCMajor
+  },
+  {
+    startingFret: 3,
+    chordPattern: barreMajor2
+  },
+  {
+    startingFret: 8,
+    chordPattern: barreMajor1
+  }
+];
+const cMinor = [
+  {
+    startingFret: 3,
+    chordPattern: barreMinor2
+  },
+  {
+    startingFret: 8,
+    chordPattern: barreMinor1
+  }
+];
+const cSharpMajor = [
+  {
+    startingFret: 4,
+    chordPattern: barreMajor2
+  },
+  {
+    startingFret: 9,
+    chordPattern: barreMajor1
+  }
+];
+const cSharpMinor = [
+  {
+    startingFret: 4,
+    chordPattern: barreMinor2
+  },
+  {
+    startingFret: 9,
+    chordPattern: barreMinor1
+  }
+];
+const dMajor = [
+  {
+    startingFret: 1,
+    chordPattern: openDMajor
+  },
+  {
+    startingFret: 5,
+    chordPattern: barreMajor2
+  },
+  {
+    startingFret: 10,
+    chordPattern: barreMajor1
+  }
+];
+const dMinor = [
+  {
+    startingFret: 1,
+    chordPattern: openDMinor
+  },
+  {
+    startingFret: 5,
+    chordPattern: barreMinor2
+  },
+  {
+    startingFret: 10,
+    chordPattern: barreMinor1
+  }
+];
+const dSharpMajor = [
+  {
+    startingFret: 6,
+    chordPattern: barreMajor2
+  },
+  {
+    startingFret: 11,
+    chordPattern: barreMajor1
+  }
+];
+const dSharpMinor = [
+  {
+    startingFret: 6,
+    chordPattern: barreMinor2
+  },
+  {
+    startingFret: 11,
+    chordPattern: barreMinor1
+  }
+];
+const eMajor = [
+  {
+    startingFret: 1,
+    chordPattern: openEMajor
+  },
+  {
+    startingFret: 7,
+    chordPattern: barreMajor2
+  }
+];
+const eMinor = [
+  {
+    startingFret: 1,
+    chordPattern: openEMinor
+  },
+  {
+    startingFret: 7,
+    chordPattern: barreMinor2
+  }
+];
+const fMajor = [
+  {
+    startingFret: 1,
+    chordPattern: barreMajor1
+  },
+  {
+    startingFret: 8,
+    chordPattern: barreMajor2
+  }
+];
+const fMinor = [
+  {
+    startingFret: 1,
+    chordPattern: barreMinor1
+  },
+  {
+    startingFret: 8,
+    chordPattern: barreMinor2
+  }
+];
+const fSharpMajor = [
+  {
+    startingFret: 2,
+    chordPattern: barreMajor1
+  },
+  {
+    startingFret: 9,
+    chordPattern: barreMajor2
+  }
+];
+const fSharpMinor = [
+  {
+    startingFret: 2,
+    chordPattern: barreMinor1
+  },
+  {
+    startingFret: 9,
+    chordPattern: barreMinor2
+  }
+];
+const gMajor = [
+  {
+    startingFret: 1,
+    chordPattern: openGMajor
+  },
+  {
+    startingFret: 3,
+    chordPattern: barreMajor1
+  },
+  {
+    startingFret: 10,
+    chordPattern: barreMajor2
+  }
+];
+const gMinor = [
+  {
+    startingFret: 3,
+    chordPattern: barreMinor1
+  },
+  {
+    startingFret: 10,
+    chordPattern: barreMinor2
+  }
+];
+const gSharpMajor = [
+  {
+    startingFret: 4,
+    chordPattern: barreMajor1
+  },
+  {
+    startingFret: 11,
+    chordPattern: barreMajor2
+  }
+];
+const gSharpMinor = [
+  {
+    startingFret: 4,
+    chordPattern: barreMinor1
+  },
+  {
+    startingFret: 11,
+    chordPattern: barreMinor2
+  }
+];
+
 
 export default {
   name: 'app',
@@ -289,7 +573,7 @@ export default {
       sixthString: [
         {
           cellId: 50,
-          marker: 0
+          marker: 2
         },
         {
           cellId: 51,

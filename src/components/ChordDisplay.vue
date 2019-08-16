@@ -155,21 +155,23 @@ export default {
 .chord-display {
   display: flex;
   flex-direction: column;
+
 }
 .chord-label {
 
 }
 .fret-label-container {
   display: flex;
-  flex: 1;
+  flex: 1 1 50px;
 }
 .fret-label {
   flex: 1;
   justify-content: space-between;
+  /* could change to flex-end */
 }
 .string-container {
   display:flex;
-  flex: 1;
+  flex: 1 1 50px;
   /* TODO: horizontal line aka the string */
 }
 .top-string {
@@ -191,18 +193,21 @@ export default {
 
 }
 .fret {
-  flex: 1;
+  flex: 1 1 50px;
+  border: solid;
 }
 .blank {
   /* blank content */
 }
 .circle {
-  width: 5px;
-  height: 100px;
+
   background: black;
   border-radius: 50%;
 }
 .cross {
   /* TODO: not implemented */
+
+  background: red;
+  border-radius: 50%;
 }
 </style>
