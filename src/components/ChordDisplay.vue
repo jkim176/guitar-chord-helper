@@ -17,46 +17,56 @@
            :class="{circle: firstString[index].marker == 1,
                     cross: firstString[index].marker == 2}"
       >
+        <div class="string">
+        </div>
       </div>
     </div>
 
-    <div class="string-container mid-string">
+    <div class="string-container">
       <div v-for="(fret, index) in secondString"
            :key="fret.cellId"
            class="fret"
            :class="{circle: secondString[index].marker == 1,
                     cross: secondString[index].marker == 2}"
       >
+        <div class="string">
+        </div>
       </div>
     </div>
 
-    <div class="string-container mid-string">
+    <div class="string-container">
       <div v-for="(fret, index) in thirdString"
            :key="fret.cellId"
            class="fret"
            :class="{circle: thirdString[index].marker == 1,
                     cross: thirdString[index].marker == 2}"
       >
+        <div class="string">
+        </div>
       </div>
     </div>
 
-    <div class="string-container mid-string">
+    <div class="string-container">
       <div v-for="(fret, index) in fourthString"
            :key="fret.cellId"
            class="fret"
            :class="{circle: fourthString[index].marker == 1,
                     cross: fourthString[index].marker == 2}"
       >
+        <div class="string">
+        </div>
       </div>
     </div>
 
-    <div class="string-container mid-string">
+    <div class="string-container">
       <div v-for="(fret, index) in fifthString"
            :key="fret.cellId"
            class="fret"
            :class="{circle: fifthString[index].marker == 1,
                     cross: fifthString[index].marker == 2}"
       >
+        <div class="string">
+        </div>
       </div>
     </div>
 
@@ -67,6 +77,8 @@
            :class="{circle: sixthString[index].marker == 1,
                     cross: sixthString[index].marker == 2}"
       >
+        <div class="string">
+        </div>
       </div>
     </div>
 
@@ -157,21 +169,25 @@ export default {
   /* could change to flex-end */
 }
 .string-container {
-  display:flex;
+  display: flex;
   flex: 1 1 50px;
-  /* TODO: horizontal line aka the string */
+  /* TODO: horizontal line aka the string
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  */
+  border-left: 5px solid silver;
 }
 .top-string {
-
+  border-top: 1px solid black;
 }
 .mid-string {
 
 }
 .bot-string {
-
+  border-bottom: 1px solid black;
 }
 .first-fret {
-
+  border-left: 5px solid silver;
 }
 .mid-fret {
 
@@ -181,6 +197,9 @@ export default {
 }
 .fret {
   flex: 1 1 50px;
+  /* */
+  display: flex;
+  border-right: 5px solid silver;
 }
 .circle {
   background: black;
@@ -190,5 +209,10 @@ export default {
   /* TODO: not implemented */
   background: red;
   border-radius: 50%;
+}
+.string {
+  flex: 1 1 0;
+  border-bottom: 2px solid black;
+  height: 50%;
 }
 </style>
