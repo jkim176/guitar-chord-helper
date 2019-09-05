@@ -14,6 +14,9 @@
 
     <div class="string-container top-string">
       <!-- TODO: dynamically change string name based on configuration -->
+      <div class="string-label">
+        <h3>e</h3>
+      </div>
       <div v-for="(fret, index) in firstString"
            :key="fret.cellId"
            class="fret"
@@ -23,6 +26,9 @@
     </div>
 
     <div class="string-container mid-string">
+      <div class="string-label">
+        <h3>B</h3>
+      </div>
       <div v-for="(fret, index) in secondString"
            :key="fret.cellId"
            class="fret"
@@ -32,6 +38,9 @@
     </div>
 
     <div class="string-container mid-string">
+      <div class="string-label">
+        <h3>G</h3>
+      </div>
       <div v-for="(fret, index) in thirdString"
            :key="fret.cellId"
            class="fret"
@@ -41,6 +50,9 @@
     </div>
 
     <div class="string-container mid-string">
+      <div class="string-label">
+        <h3>D</h3>
+      </div>
       <div v-for="(fret, index) in fourthString"
            :key="fret.cellId"
            class="fret"
@@ -50,6 +62,9 @@
     </div>
 
     <div class="string-container mid-string">
+      <div class="string-label">
+        <h3>A</h3>
+      </div>
       <div v-for="(fret, index) in fifthString"
            :key="fret.cellId"
            class="fret"
@@ -59,6 +74,9 @@
     </div>
 
     <div class="string-container bot-string">
+      <div class="string-label">
+        <h3>E</h3>
+      </div>
       <div v-for="(fret, index) in sixthString"
            :key="fret.cellId"
            class="fret"
@@ -439,5 +457,8 @@ export default {
   border-right: 1px solid black;
   background: black;
   height: 100%;
+}
+.string-label {
+  width: 1vw;
 }
 </style>
