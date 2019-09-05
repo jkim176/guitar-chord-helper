@@ -13,6 +13,8 @@
     </div>
 
     <div class="string-container top-string">
+      <!-- TODO: dynamically change string name based on configuration -->
+      <h3>e</h3>
       <div v-for="(fret, index) in firstString"
            :key="fret.cellId"
            class="fret"
@@ -22,6 +24,7 @@
     </div>
 
     <div class="string-container mid-string">
+      <h3>B</h3>
       <div v-for="(fret, index) in secondString"
            :key="fret.cellId"
            class="fret"
@@ -31,6 +34,7 @@
     </div>
 
     <div class="string-container mid-string">
+      <h3>G</h3>
       <div v-for="(fret, index) in thirdString"
            :key="fret.cellId"
            class="fret"
@@ -40,6 +44,7 @@
     </div>
 
     <div class="string-container mid-string">
+      <h3>D</h3>
       <div v-for="(fret, index) in fourthString"
            :key="fret.cellId"
            class="fret"
@@ -49,6 +54,7 @@
     </div>
 
     <div class="string-container mid-string">
+      <h3>A</h3>
       <div v-for="(fret, index) in fifthString"
            :key="fret.cellId"
            class="fret"
@@ -58,6 +64,7 @@
     </div>
 
     <div class="string-container bot-string">
+      <h3>E</h3>
       <div v-for="(fret, index) in sixthString"
            :key="fret.cellId"
            class="fret"
@@ -301,6 +308,9 @@ export default {
       // TODO: frets based on variations
       let startingFret;
       switch(chordKeyObject.musicalKey) {
+          case "E":
+            startingFret = -1;
+            break;
           case "F":
             startingFret = 0;
             break;
@@ -348,6 +358,7 @@ export default {
 .chord-display {
   display: flex;
   flex-direction: column;
+  padding-left: 5px;
 }
 .chord-label {
 

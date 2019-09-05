@@ -5,6 +5,7 @@
       <label for="musicalKey">Key</label>
       <select id="musicalKey"
               v-model="musicalKey"
+              @change="sendChordToDisplay"
               >
         <option>A</option>
         <option>A#</option>
@@ -25,17 +26,18 @@
       <label for="chordType">Chords</label>
       <select id="chordType"
               v-model="chordType"
+              @change="sendChordToDisplay"
               >
         <option>Major</option>
         <option>Minor</option>
       </select>
     </div>
 
-    <button id="getChordButton"
+    <!-- <button id="getChordButton"
             @click="sendChordToDisplay"
             >
             Get
-    </button>
+    </button> -->
   </div>
 </template>
 
