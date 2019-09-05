@@ -14,7 +14,6 @@
 
     <div class="string-container top-string">
       <!-- TODO: dynamically change string name based on configuration -->
-      <h3>e</h3>
       <div v-for="(fret, index) in firstString"
            :key="fret.cellId"
            class="fret"
@@ -24,7 +23,6 @@
     </div>
 
     <div class="string-container mid-string">
-      <h3>B</h3>
       <div v-for="(fret, index) in secondString"
            :key="fret.cellId"
            class="fret"
@@ -34,7 +32,6 @@
     </div>
 
     <div class="string-container mid-string">
-      <h3>G</h3>
       <div v-for="(fret, index) in thirdString"
            :key="fret.cellId"
            class="fret"
@@ -44,7 +41,6 @@
     </div>
 
     <div class="string-container mid-string">
-      <h3>D</h3>
       <div v-for="(fret, index) in fourthString"
            :key="fret.cellId"
            class="fret"
@@ -54,7 +50,6 @@
     </div>
 
     <div class="string-container mid-string">
-      <h3>A</h3>
       <div v-for="(fret, index) in fifthString"
            :key="fret.cellId"
            class="fret"
@@ -64,7 +59,6 @@
     </div>
 
     <div class="string-container bot-string">
-      <h3>E</h3>
       <div v-for="(fret, index) in sixthString"
            :key="fret.cellId"
            class="fret"
@@ -281,6 +275,14 @@ export default {
         fourthString: [0, 0, 1, 0, 0, 0],
         fifthString: [0, 0, 1, 0, 0, 0],
         sixthString: [1, 0, 0, 0, 0, 0]
+      },
+      seventh: {
+        firstString: [1, 0, 0, 0, 0, 0],
+        secondString: [1, 0, 0, 0, 0, 0],
+        thirdString: [0, 1, 0, 0, 0, 0],
+        fourthString: [1, 0, 0, 0, 0, 0],
+        fifthString: [0, 0, 1, 0, 0, 0],
+        sixthString: [1, 0, 0, 0, 0, 0]
       }
     }
   },
@@ -303,6 +305,15 @@ export default {
           this.fourthString[i].marker = this.minor.fourthString[i];
           this.fifthString[i].marker = this.minor.fifthString[i];
           this.sixthString[i].marker = this.minor.sixthString[i];
+        } 
+      } else if(chordKeyObject.chordType == "7th") {
+        for(let i = 0; i < this.firstString.length; i++) {
+          this.firstString[i].marker = this.seventh.firstString[i];
+          this.secondString[i].marker = this.seventh.secondString[i];
+          this.thirdString[i].marker = this.seventh.thirdString[i];
+          this.fourthString[i].marker = this.seventh.fourthString[i];
+          this.fifthString[i].marker = this.seventh.fifthString[i];
+          this.sixthString[i].marker = this.seventh.sixthString[i];
         }
       }
       // TODO: frets based on variations
@@ -394,16 +405,39 @@ export default {
 .last-fret {
 
 }
-.fret {
-  flex: 1;
-}
 .circle {
   width: 5px;
   height: 100px;
-  background: black;
+  background: gray;
   border-radius: 50%;
+  opacity: 45;
 }
 .cross {
-
+}
+.fret {
+  flex: 1;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.fret:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-top: 1px solid black;
+  background: black;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.fret:after {
+  content: '';
+  position: absolute;
+  left: 99%;
+  top: 0;
+  border-right: 1px solid black;
+  background: black;
+  height: 100%;
 }
 </style>

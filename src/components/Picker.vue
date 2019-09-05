@@ -30,6 +30,7 @@
               >
         <option>Major</option>
         <option>Minor</option>
+        <option>7th</option>
       </select>
     </div>
 
